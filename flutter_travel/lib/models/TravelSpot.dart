@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel/models/User.dart';
+import 'package:flutter_travel/models/User.dart';
 
 class TravelSpot {
   final String name, image;
