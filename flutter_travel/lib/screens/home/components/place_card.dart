@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../constants.dart';
 import '../../../models/TravelSpot.dart';
@@ -8,20 +9,22 @@ import '../../../size_config.dart';
 class PlaceCard extends StatelessWidget {
   final TravelSpot travelSpot;
   final GestureTapCallback press;
+  final bool isFullCard;
   const PlaceCard({
     Key key,
     @required this.travelSpot,
     @required this.press,
+    this.isFullCard = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: getProportionateScreenWidth(137),
+      width: getProportionateScreenWidth(isFullCard ? 158 : 137),
       child: Column(
         children: [
           AspectRatio(
-            aspectRatio: 1.29,
+            aspectRatio: isFullCard ? 1.19 : 1.29,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -38,7 +41,7 @@ class PlaceCard extends StatelessWidget {
             ),
           ),
           Container(
-            width: getProportionateScreenWidth(137),
+            width: getProportionateScreenWidth(isFullCard ? 158 : 137),
             padding: EdgeInsets.all(
               getProportionateScreenWidth(kDefaultPadding),
             ),
@@ -54,13 +57,27 @@ class PlaceCard extends StatelessWidget {
               children: [
                 Text(
                   travelSpot.name,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: isFullCard ? 13 : 11,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                if (isFullCard)
+                  Text(
+                    travelSpot.date.day.toString(),
+                    style: Theme.of(context).textTheme.headline6.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                if (isFullCard)
+                  Text(
+                    DateFormat.MMMM().format(travelSpot.date).toString() +
+                        " " +
+                        travelSpot.date.year.toString(),
+                  ),
                 VerticalSpacing(
-                  of: 10,
+                  of: 6,
                 ),
                 Travelers(users: travelSpot.users),
               ],
