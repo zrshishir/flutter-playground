@@ -1,12 +1,8 @@
-import 'package:e_commerce_ui/components/custom_suffix_icon.dart';
-import 'package:e_commerce_ui/components/default_button.dart';
-import 'package:e_commerce_ui/components/form_error.dart';
+import 'package:e_commerce_ui/components/no_account_text.dart';
 import 'package:e_commerce_ui/components/social_card.dart';
-import 'package:e_commerce_ui/constants.dart';
 import 'package:e_commerce_ui/screen/sign_in/components/sign_in_form.dart';
 import 'package:e_commerce_ui/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -18,42 +14,54 @@ class Body extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: getProportionateScreenWidth(20),
           ),
-          child: Column(
-            children: [
-              Text(
-                "Welcome Back",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: getProportionateScreenWidth(28),
-                  fontWeight: FontWeight.bold,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: SizeConfig.screenHeight * 0.04,
                 ),
-              ),
-              Text(
-                "Sign with your email and password \nor continue with your social media",
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: getProportionateScreenHeight(40),
-              ),
-              SignFrom(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SocialCard(
-                    icon: "assets/icons/facebook-2.svg",
-                    press: () {},
+                Text(
+                  "Welcome Back",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: getProportionateScreenWidth(28),
+                    fontWeight: FontWeight.bold,
                   ),
-                  SocialCard(
-                    icon: "assets/icons/google-icon.svg",
-                    press: () {},
-                  ),
-                  SocialCard(
-                    icon: "assets/icons/twitter.svg",
-                    press: () {},
-                  ),
-                ],
-              ),
-            ],
+                ),
+                Text(
+                  "Sign with your email and password \nor continue with your social media",
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(40),
+                ),
+                SignFrom(),
+                SizedBox(
+                  height: getProportionateScreenHeight(40),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SocialCard(
+                      icon: "assets/icons/facebook-2.svg",
+                      press: () {},
+                    ),
+                    SocialCard(
+                      icon: "assets/icons/google-icon.svg",
+                      press: () {},
+                    ),
+                    SocialCard(
+                      icon: "assets/icons/twitter.svg",
+                      press: () {},
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(16),
+                ),
+                NoAccountText(),
+              ],
+            ),
           ),
         ),
       ),

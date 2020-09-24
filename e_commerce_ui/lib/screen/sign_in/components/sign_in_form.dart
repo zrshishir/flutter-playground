@@ -1,6 +1,7 @@
 import 'package:e_commerce_ui/components/custom_suffix_icon.dart';
 import 'package:e_commerce_ui/components/default_button.dart';
 import 'package:e_commerce_ui/components/form_error.dart';
+import 'package:e_commerce_ui/screen/forgot_password/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -45,9 +46,13 @@ class _SignFromState extends State<SignFrom> {
               ),
               Text("remember me"),
               Spacer(),
-              Text(
-                "Forgot Password",
-                style: TextStyle(decoration: TextDecoration.underline),
+              GestureDetector(
+                onTap: () => Navigator.popAndPushNamed(
+                    context, ForgotPassword.routeName),
+                child: Text(
+                  "Forgot Password",
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
               ),
             ],
           ),
