@@ -19,6 +19,23 @@ class _SignFromState extends State<SignFrom> {
   String email;
   String password;
   bool remember = false;
+
+  void addError({String error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error);
+      });
+    }
+  }
+
+  void removeError({String error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -81,23 +98,23 @@ class _SignFromState extends State<SignFrom> {
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kPassNullError)) {
           setState(() {
-            errors.remove(kPassNullError);
+            removeError(error: kPassNullError);
           });
         } else if (value.length >= 8 && errors.contains(kShortPassError)) {
           setState(() {
-            errors.remove(kShortPassError);
+            removeError(error: kShortPassError);
           });
         }
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
-            errors.add(kPassNullError);
+            addError(error: kPassNullError);
           });
           return "";
         } else if (value.length < 8 && !errors.contains(kShortPassError)) {
           setState(() {
-            errors.add(kShortPassError);
+            addError(error: kShortPassError);
           });
           return "";
         }
@@ -121,24 +138,24 @@ class _SignFromState extends State<SignFrom> {
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {
           setState(() {
-            errors.remove(kEmailNullError);
+            removeError(error: kEmailNullError);
           });
         } else if (emailValidatorRegExp.hasMatch(value) &&
             errors.contains(kInvalidEmailError)) {
           setState(() {
-            errors.remove(kInvalidEmailError);
+            removeError(error: kInvalidEmailError);
           });
         }
       },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kEmailNullError)) {
           setState(() {
-            errors.add(kEmailNullError);
+            addError(error: kEmailNullError);
           });
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
-            errors.add(kInvalidEmailError);
+            addError(error: kInvalidEmailError);
           });
         }
         return null;
