@@ -3,7 +3,6 @@ import 'package:e_commerce_ui/components/default_button.dart';
 import 'package:e_commerce_ui/components/form_error.dart';
 import 'package:e_commerce_ui/components/social_card.dart';
 import 'package:e_commerce_ui/constants.dart';
-import 'package:e_commerce_ui/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -85,47 +84,103 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-              labelText: "Email",
-              hintText: "Enter your email",
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSuffixIcon(
-                svgIcon: "assets/icons/Mail.svg",
-              ),
-            ),
-          ),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-              labelText: "Password",
-              hintText: "Enter your password",
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSuffixIcon(
-                svgIcon: "assets/icons/Lock.svg",
-              ),
-            ),
-          ),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-              labelText: "Confirm Password",
-              hintText: "Retype your password",
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: CustomSuffixIcon(
-                svgIcon: "assets/icons/Lock.svg",
-              ),
-            ),
-          ),
+          buildEmailTextField(),
+          buildPasswordTextField(),
+          buildConfirmPasswordTextField(),
           FormError(errors: errors),
           DefaultButton(
             text: "Continue",
-            press: () {},
+            press: () {
+              if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
+              }
+            },
           ),
         ],
+      ),
+    );
+  }
+
+  TextFormField buildConfirmPasswordTextField() {
+    return TextFormField(
+      obscureText: true,
+      decoration: InputDecoration(
+        labelText: "Confirm Password",
+        hintText: "Retype your password",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSuffixIcon(
+          svgIcon: "assets/icons/Lock.svg",
+        ),
+      ),
+    );
+  }
+
+  TextFormField buildPasswordTextField() {
+    return TextFormField(
+      validator: (value) {
+        if (value.isEmpty && !errors.contains(kPassNullError)) {
+          setState(() {
+            addError(error: kPassNullError);
+          });
+          return "";
+        } else if (value.length < 6 && !errors.contains(kShortPassError)) {
+          setState(() {
+            addError(error: kShortPassError);
+            return "";
+          });
+        }
+        return null;
+      },
+      obscureText: true,
+      decoration: InputDecoration(
+        labelText: "Password",
+        hintText: "Enter your password",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSuffixIcon(
+          svgIcon: "assets/icons/Lock.svg",
+        ),
+      ),
+    );
+  }
+
+  TextFormField buildEmailTextField() {
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      onChanged: (value) {
+        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
+          setState(() {
+            removeError(error: kEmailNullError);
+          });
+        } else if (emailValidatorRegExp.hasMatch(value) &&
+            errors.contains(kInvalidEmailError)) {
+          setState(() {
+            removeError(error: kInvalidEmailError);
+          });
+        }
+      },
+      validator: (value) {
+        if (value.isEmpty && !errors.contains(kEmailNullError)) {
+          setState(() {
+            addError(error: kEmailNullError);
+          });
+        } else if (!emailValidatorRegExp.hasMatch(value) &&
+            !errors.contains(kInvalidEmailError)) {
+          setState(() {
+            addError(error: kInvalidEmailError);
+          });
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Email",
+        hintText: "Enter your email",
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSuffixIcon(
+          svgIcon: "assets/icons/Mail.svg",
+        ),
       ),
     );
   }
