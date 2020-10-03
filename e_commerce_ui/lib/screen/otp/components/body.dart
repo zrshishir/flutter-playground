@@ -1,4 +1,5 @@
 import 'package:e_commerce_ui/constants.dart';
+import 'package:e_commerce_ui/screen/otp/components/otp_form.dart';
 import 'package:e_commerce_ui/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -10,16 +11,39 @@ class Body extends StatelessWidget {
       child: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: Column(
-          children: [
-            Text(
-              "OTP Verification",
-              style: headingStyle,
-            ),
-            Text("We sent a code to your phone no"),
-            buildTimer(),
-            OtpForm(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: SizeConfig.screenHeight * 0.05,
+              ),
+              Text(
+                "OTP Verification",
+                style: headingStyle,
+              ),
+              SizedBox(
+                height: SizeConfig.screenHeight * 0.05,
+              ),
+              Text("We sent a code to your phone no"),
+              buildTimer(),
+              SizedBox(
+                height: SizeConfig.screenHeight * 0.1,
+              ),
+              OtpForm(),
+              SizedBox(
+                height: SizeConfig.screenHeight * 0.1,
+              ),
+              GestureDetector(
+                onTap: () {
+                  //send otp again
+                },
+                child: Text(
+                  "Resend OTP Code",
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -30,8 +54,8 @@ class Body extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("This code will expire in "),
-        TweenAnimationBuilder<int>(
-          tween: Tween(begin: 30, end: 0),
+        TweenAnimationBuilder(
+          tween: Tween<double>(begin: 30, end: 0),
           duration: Duration(seconds: 30),
           builder: (context, value, child) => Text(
             "00:${value.toInt()}",
@@ -40,35 +64,6 @@ class Body extends StatelessWidget {
           onEnd: () {},
         ),
       ],
-    );
-  }
-}
-
-class OtpForm extends StatefulWidget {
-  @override
-  _OtpFormState createState() => _OtpFormState();
-}
-
-class _OtpFormState extends State<OtpForm> {
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Row(
-        children: [
-          SizedBox(
-            width: getProportionateScreenWidth(60),
-            child: TextFormField(
-              style: TextStyle(fontSize: 24),
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: kTextColor),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
     );
   }
 }
