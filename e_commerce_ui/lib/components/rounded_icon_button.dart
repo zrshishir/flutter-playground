@@ -24,7 +24,7 @@ class RoundedIconButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
         ),
         onPressed: press,
-        child: Icon(Icons.arrow_back_ios),
+        child: Icon(iconData),
       ),
     );
   }

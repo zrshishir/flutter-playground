@@ -1,4 +1,5 @@
 import 'package:e_commerce_ui/model/Product.dart';
+import 'package:e_commerce_ui/screen/detail/components/body.dart';
 import 'package:e_commerce_ui/screen/detail/components/custome_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,9 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF5F6F9),
       appBar: CustomeAppBar(arguments.product.rating),
+      body: Body(
+        product: arguments.product,
+      ),
     );
   }
 }
