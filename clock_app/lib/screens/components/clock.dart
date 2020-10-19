@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:math';
 import 'package:clock_app/constants.dart';
 import 'package:clock_app/models/my_theme_provider.dart';
