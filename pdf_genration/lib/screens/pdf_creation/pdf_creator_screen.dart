@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_genration/screens/pdf_creation/dolil_pdf.dart';
 import 'package:pdf_genration/screens/pdf_creation/report_pdf.dart';
 
 class PDFCreator extends StatefulWidget {
@@ -11,22 +12,47 @@ class _PDFCreatorState extends State<PDFCreator> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          margin: EdgeInsets.only(top: 30),
-          height: 40,
-          child: RaisedButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: Text(
-              'Get Report',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-            color: Colors.blue,
-            onPressed: () {
-              reportView(context);
-            },
+        child: Padding(
+          padding: const EdgeInsets.only(top: 150),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                height: 40,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: Text(
+                    'Get Report',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  color: Colors.blue,
+                  onPressed: () {
+                    reportView(context);
+                  },
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                height: 40,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: Text(
+                    'Mohori',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  color: Colors.blue,
+                  onPressed: () {
+                    dolilFormat(context);
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),
