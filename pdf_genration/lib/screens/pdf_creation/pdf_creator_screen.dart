@@ -24,7 +24,7 @@ class _PDFCreatorState extends State<PDFCreator> {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   child: Text(
-                    'Get Report',
+                    'রিপোর্ট',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -42,7 +42,7 @@ class _PDFCreatorState extends State<PDFCreator> {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   child: Text(
-                    'Mohori',
+                    'মোহরী',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),

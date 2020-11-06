@@ -4,12 +4,20 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'package:pdf_genration/screens/pdf_creation/pdf_viewer_page.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 dolilFormat(context) async {
   final Document pdf = Document();
 
   pdf.addPage(
     MultiPage(
+      theme: ThemeData.withFont(
+        base: Font.ttf(await rootBundle.load("fonts/Siyamrupali.ttf")),
+        bold: Font.ttf(await rootBundle.load("fonts/SutonnyMJ-Bold.ttf")),
+        italic: Font.ttf(await rootBundle.load("fonts/SutonnyMJ-Italic.ttf")),
+        boldItalic:
+            Font.ttf(await rootBundle.load("fonts/SutonnyMJ-BoldItalic.ttf")),
+      ),
       pageFormat: PdfPageFormat.legal.copyWith(
           marginTop: 4.5 * PdfPageFormat.inch,
           marginBottom: 1.5 * PdfPageFormat.inch,
@@ -61,7 +69,7 @@ dolilFormat(context) async {
         ),
         Header(
           level: 1,
-          text: 'What is lorem ipsum?',
+          text: 'আমার সোনার বাংলা আমি তোমায় ভাল বাসি',
         ),
         Paragraph(
           text:
