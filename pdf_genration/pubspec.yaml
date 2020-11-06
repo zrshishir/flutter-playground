@@ -71,7 +71,7 @@ flutter:
   fonts:
     - family: base
       fonts:
-        - asset: fonts/Siyamrupali.ttf
+        - asset: fonts/SolaimanLipi_20-04-07.ttf
 
     - family: italic
       fonts:

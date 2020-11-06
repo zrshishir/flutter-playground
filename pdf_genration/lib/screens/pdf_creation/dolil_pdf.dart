@@ -12,11 +12,8 @@ dolilFormat(context) async {
   pdf.addPage(
     MultiPage(
       theme: ThemeData.withFont(
-        base: Font.ttf(await rootBundle.load("fonts/Siyamrupali.ttf")),
-        bold: Font.ttf(await rootBundle.load("fonts/SutonnyMJ-Bold.ttf")),
-        italic: Font.ttf(await rootBundle.load("fonts/SutonnyMJ-Italic.ttf")),
-        boldItalic:
-            Font.ttf(await rootBundle.load("fonts/SutonnyMJ-BoldItalic.ttf")),
+        base:
+            Font.ttf(await rootBundle.load("fonts/SolaimanLipi_20-04-07.ttf")),
       ),
       pageFormat: PdfPageFormat.legal.copyWith(
           marginTop: 4.5 * PdfPageFormat.inch,
