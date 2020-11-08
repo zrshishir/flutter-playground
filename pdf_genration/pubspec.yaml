@@ -72,6 +72,13 @@ flutter:
     - family: base
       fonts:
         - asset: fonts/SolaimanLipi_20-04-07.ttf
+        - asset: fonts/kalpurush.ttf
+        - asset: fonts/kalpurushANSI.ttf
+        - asset: fonts/Siyamrupali.ttf
+        - asset: fonts/SutonnyMJ.ttf
+        - asset: fonts/SutonnyMJRegular.ttf
+        - asset: fonts/SutonnyOMJ.ttf
+        - asset: fonts/Vrinda.ttf
 
     - family: italic
       fonts:
