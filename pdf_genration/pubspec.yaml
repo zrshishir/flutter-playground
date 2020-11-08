@@ -71,6 +71,7 @@ flutter:
   fonts:
     - family: base
       fonts:
+        - asset: fonts/Nikosh.ttf
         - asset: fonts/SolaimanLipi_20-04-07.ttf
         - asset: fonts/kalpurush.ttf
         - asset: fonts/kalpurushANSI.ttf

@@ -12,8 +12,7 @@ dolilFormat(context) async {
   pdf.addPage(
     MultiPage(
       theme: ThemeData.withFont(
-        base:
-            Font.ttf(await rootBundle.load("fonts/SolaimanLipi_20-04-07.ttf")),
+        base: Font.ttf(await rootBundle.load("fonts/kalpurush.ttf")),
       ),
       pageFormat: PdfPageFormat.legal.copyWith(
           marginTop: 4.5 * PdfPageFormat.inch,
@@ -46,7 +45,7 @@ dolilFormat(context) async {
           alignment: Alignment.centerRight,
           margin: const EdgeInsets.only(top: 1 * PdfPageFormat.mm),
           child: Text(
-            'Page ${context.pageNumber} of ${context.pagesCount}',
+            'ÓPjgvb cvZv-${context.pageNumber}Ó ',
             style: Theme.of(context)
                 .defaultTextStyle
                 .copyWith(color: PdfColors.grey),
@@ -59,18 +58,19 @@ dolilFormat(context) async {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Report', textScaleFactor: 2),
+              Text('আমফল বিক্রয় দলিল', textScaleFactor: 2),
               PdfLogo(),
             ],
           ),
         ),
         Header(
           level: 1,
-          text: 'আমার সোনার বাংলা আমি তোমায় ভাল বাসি',
+          text:
+              'cig Kiæbvgq Avjøvn cv‡Ki bvg ¯^ib Kwiqv AÎ Avg evMv‡bi Avg dj weµq `wjj wjwLqv w`‡ZwQ †h, Avgvi mvsmvwiK bvbv cÖKvi Øvq emZt UvKvi we‡kl Avek¨K nIqvq Ab¨ †Kvb Dcv‡q UvKv msMÖn Kwi‡Z bv cvivq  Avgvi nK `Lwjq wb‡¤œ Zdwmj ewb©Z Rwgi Dc‡i Aew¯’Z 9(bq)wU Avg Mv‡Qi Avg dj 2(`yB) eQi †gqv‡` weµq Kwievi Rb¨ †gŠwLK kniZ w`‡j Avcbx Zv jB‡Z m¤§wZ cÖKvk K‡ib Df‡qi m¤§wZ µ‡g eZ©gvb evRvi `i wnmv‡e g~j¨ wba©vib  Kwijvg| hvnvi g~j¨t 60,000/-UvKv K_vqt lvU nvRvi UvKv ¯^vÿx M‡bi ¯^vÿv‡Z Dcw¯’Z n‡q D³ UvKv Avwg GK †hv‡M MÖnY Kwijvg| Avcbx  AvMvgx 2027Bs I 2028Bs mvj2(`yB)†gŠmy‡gi Avg dj wbqwgZ fv‡e †fvM `Lj Kwi‡Z _vwK‡eb|',
         ),
         Paragraph(
           text:
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+              'উহাতে  আমি কিংবা  আমার কোন  ওয়ারিশ গন কেহ  কোন প্রকার ওজর আপত্তি করিতে পারিবনা  বা পারিবেক না করিলেও তাহা আইন আদালতে অগ্রাহ্য বলিয়া গন্য হইবে। প্রকাশ থাকে যে , অত্র আম বাগানের আমফল বিক্রয় করিয়া যদি  কোন চালাকি বা প্রতারনা করি তাহলে আপনি আইন গত ভাবে যেকোন ব্যাবস্থা লইতে পারিবেন। এতদর্থে সুস্থ্য শরিরে সরল মনে স্বেচ্ছোয়  স্বজ্ঞনে অত্র আম বাগানের আম ফল বিক্রয় দলিল আপনার বরাবরে লিখিয়া দিয়া সহি সম্পাদন করিয়া দিলাম।',
         ),
         Paragraph(
           text:
