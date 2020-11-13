@@ -1,4 +1,7 @@
+import 'package:call_app/constants.dart';
+import 'package:call_app/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -31,9 +34,25 @@ class Body extends StatelessWidget {
                       .headline3
                       .copyWith(color: Colors.white),
                 ),
+                VerticalSpacing(
+                  of: 10,
+                ),
                 Text(
                   "Incoming 00:01".toUpperCase(),
                   style: TextStyle(color: Colors.white60),
+                ),
+                Spacer(),
+                SizedBox(
+                  height: getProportionateScreenWidth(64),
+                  width: getProportionateScreenWidth(64),
+                  child: FlatButton(
+                    color: kRedColor,
+                    padding: EdgeInsets.all(15),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100)),
+                    onPressed: () {},
+                    child: SvgPicture.asset("assets/icons/call_end.svg"),
+                  ),
                 ),
               ],
             ),
