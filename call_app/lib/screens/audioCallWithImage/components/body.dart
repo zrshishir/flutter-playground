@@ -1,3 +1,4 @@
+import 'package:call_app/components/rounded_button.dart';
 import 'package:call_app/constants.dart';
 import 'package:call_app/size_config.dart';
 import 'package:flutter/material.dart';
@@ -42,17 +43,28 @@ class Body extends StatelessWidget {
                   style: TextStyle(color: Colors.white60),
                 ),
                 Spacer(),
-                SizedBox(
-                  height: getProportionateScreenWidth(64),
-                  width: getProportionateScreenWidth(64),
-                  child: FlatButton(
-                    color: kRedColor,
-                    padding: EdgeInsets.all(15),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100)),
-                    onPressed: () {},
-                    child: SvgPicture.asset("assets/icons/call_end.svg"),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    RoundedButton(
+                      press: () {},
+                      color: Colors.white,
+                      iconColor: Colors.black,
+                      iconSrc: "assets/icons/Icon Mic.svg",
+                    ),
+                    RoundedButton(
+                      press: () {},
+                      color: kRedColor,
+                      iconColor: Colors.white,
+                      iconSrc: "assets/icons/call_end.svg",
+                    ),
+                    RoundedButton(
+                      press: () {},
+                      color: Colors.white,
+                      iconColor: Colors.black,
+                      iconSrc: "assets/icons/Icon Volume.svg",
+                    ),
+                  ],
                 ),
               ],
             ),
