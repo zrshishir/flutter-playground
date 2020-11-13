@@ -1,3 +1,4 @@
+import 'package:call_app/screens/audioCallWithImage/audio_call_with_image_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "SF UI",
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: AudioCallWithImage(),
     );
   }
 }
