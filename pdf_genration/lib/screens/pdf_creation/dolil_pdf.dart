@@ -12,7 +12,9 @@ dolilFormat(context) async {
   pdf.addPage(
     MultiPage(
       theme: ThemeData.withFont(
-        base: Font.ttf(await rootBundle.load("fonts/kalpurush.ttf")),
+        base: Font.ttf(
+          await rootBundle.load("fonts/kalpurush.ttf"),
+        ),
       ),
       pageFormat: PdfPageFormat.legal.copyWith(
           marginTop: 4.5 * PdfPageFormat.inch,
@@ -33,7 +35,7 @@ dolilFormat(context) async {
             border: BoxBorder(bottom: true, width: 0.5, color: PdfColors.grey),
           ),
           child: Text(
-            'Dolil',
+            'দলীল',
             style: Theme.of(context)
                 .defaultTextStyle
                 .copyWith(color: PdfColors.grey),
@@ -45,7 +47,7 @@ dolilFormat(context) async {
           alignment: Alignment.centerRight,
           margin: const EdgeInsets.only(top: 1 * PdfPageFormat.mm),
           child: Text(
-            'ÓPjgvb cvZv-${context.pageNumber}Ó ',
+            '”চলমান পাতা-${context.pageNumber}”',
             style: Theme.of(context)
                 .defaultTextStyle
                 .copyWith(color: PdfColors.grey),
@@ -58,7 +60,7 @@ dolilFormat(context) async {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('আমফল বিক্রয় দলিল', textScaleFactor: 2),
+              Text('আম বাগান বিক্রয় দলীল', textScaleFactor: 2),
               PdfLogo(),
             ],
           ),
@@ -66,27 +68,34 @@ dolilFormat(context) async {
         Header(
           level: 1,
           text:
-              'cig Kiæbvgq Avjøvn cv‡Ki bvg ¯^ib Kwiqv AÎ Avg evMv‡bi Avg dj weµq `wjj wjwLqv w`‡ZwQ †h, Avgvi mvsmvwiK bvbv cÖKvi Øvq emZt UvKvi we‡kl Avek¨K nIqvq Ab¨ †Kvb Dcv‡q UvKv msMÖn Kwi‡Z bv cvivq  Avgvi nK `Lwjq wb‡¤œ Zdwmj ewb©Z Rwgi Dc‡i Aew¯’Z 9(bq)wU Avg Mv‡Qi Avg dj 2(`yB) eQi †gqv‡` weµq Kwievi Rb¨ †gŠwLK kniZ w`‡j Avcbx Zv jB‡Z m¤§wZ cÖKvk K‡ib Df‡qi m¤§wZ µ‡g eZ©gvb evRvi `i wnmv‡e g~j¨ wba©vib  Kwijvg| hvnvi g~j¨t 60,000/-UvKv K_vqt lvU nvRvi UvKv ¯^vÿx M‡bi ¯^vÿv‡Z Dcw¯’Z n‡q D³ UvKv Avwg GK †hv‡M MÖnY Kwijvg| Avcbx  AvMvgx 2027Bs I 2028Bs mvj2(`yB)†gŠmy‡gi Avg dj wbqwgZ fv‡e †fvM `Lj Kwi‡Z _vwK‡eb|',
+              'দলিল গ্রহিতা ঃ মোঃ বজলুর রহমান (সুজন) পিতাঃ মৃত- এরাদ আলী গ্রামঃ মেরামতপুর ডাকঘরঃ পরানপুরহাট উপজেলাঃ চারঘাট জেলা ঃ রাজশাহী । পেশাঃ কিটনাশক ব্যাবসায়িক',
         ),
         Paragraph(
           text:
-              'উহাতে  আমি কিংবা  আমার কোন  ওয়ারিশ গন কেহ  কোন প্রকার ওজর আপত্তি করিতে পারিবনা  বা পারিবেক না করিলেও তাহা আইন আদালতে অগ্রাহ্য বলিয়া গন্য হইবে। প্রকাশ থাকে যে , অত্র আম বাগানের আমফল বিক্রয় করিয়া যদি  কোন চালাকি বা প্রতারনা করি তাহলে আপনি আইন গত ভাবে যেকোন ব্যাবস্থা লইতে পারিবেন। এতদর্থে সুস্থ্য শরিরে সরল মনে স্বেচ্ছোয়  স্বজ্ঞনে অত্র আম বাগানের আম ফল বিক্রয় দলিল আপনার বরাবরে লিখিয়া দিয়া সহি সম্পাদন করিয়া দিলাম।',
+              'দলিল দাতা ঃ মোঃ সাহাবুদ্দিন ইসলাম পিতাঃ মোঃ শাহজাহান আলী গ্রামঃ গঁওরা  ডাকঘরঃ পরানপুরহাট উপজেলাঃ চারঘাট জেলা ঃ রাজশাহী । পেশা ঃ কৃষি ।',
         ),
         Paragraph(
           text:
-              'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+              'পরম করুনাময় আল্লাহ পাকের নাম স্বরন করিয়া অত্র আম বাগানের আম ফল বিক্রয় দলিল লিখিয়া দিতেছি যে, আমার সাংসারিক নানা প্রকার দ্বায় বসতঃ টাকার বিশেষ আবশ্যক হওয়ায় অন্য কোন উপায়ে টাকা সংগ্রহ করিতে না পারায়  আমার হক দখলিয় নি¤েœ তফসিল বর্নিত জমির উপরে অবস্থিত ৯(নয়)টি আম গাছের আম ফল ২(দুই) বছর মেয়াদে বিক্রয় করিবার জন্য মৌখিক শহরত দিলে আপনী তা লইতে সম্মতি প্রকাশ করেন উভয়ের সম্মতি ক্রমে বর্তমান বাজার দর হিসাবে মূল্য নির্ধারন  করিলাম। যাহার মূল্যঃ ৬০,০০০/-টাকা কথায়ঃ ষাট হাজার টাকা স্বাক্ষী গনের স্বাক্ষাতে উপস্থিত হয়ে উক্ত টাকা আমি এক যোগে গ্রহণ করিলাম। আপনী  আগামী ২০২৭ইং ও ২০২৮ইং সাল২(দুই)মৌসুমের আম ফল নিয়মিত ভাবে ভোগ দখল করিতে থাকিবেন। ',
         ),
-        Header(
-          level: 1,
-          text: 'Where does it come from?',
-        ),
+        // Header(
+        //   level: 1,
+        //   text: 'Where does it come from?',
+        // ),
         Paragraph(
             text:
-                'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).'),
+                'উহাতে  আমি কিংবা  আমার কোন  ওয়ারিশ গন কেহ  কোন প্রকার ওজর আপত্তি করিতে পারিবনা  বা পারিবেক না করিলেও তাহা আইন আদালতে অগ্রাহ্য বলিয়া গন্য হইবে। প্রকাশ থাকে যে , অত্র আম বাগানের আমফল বিক্রয় করিয়া যদি  কোন চালাকি বা প্রতারনা করি তাহলে আপনি আইন গত ভাবে যেকোন ব্যাবস্থা লইতে পারিবেন। এতদর্থে সুস্থ্য শরিরে সরল মনে স্বেচ্ছোয়  স্বজ্ঞনে অত্র আম বাগানের আম ফল বিক্রয় দলিল আপনার বরাবরে লিখিয়া দিয়া সহি সম্পাদন করিয়া দিলাম।'),
         Paragraph(
-          text:
-              'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for "lorem ipsum" will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+          text: 'ইতি/১৯/০৬/২০১৮ইং',
         ),
+        Padding(padding: const EdgeInsets.all(10)),
+        Table.fromTextArray(context: context, data: const <List<String>>[
+          <String>[
+            'আম গাছের তফসিল পরিচয়ঃ  জেলাঃ রাজশাহী উপজেলা ঃ চারঘাট',
+            'স্বাক্ষী গনের স্বাক্ষর ঃ'
+          ],
+          <String>['2000', 'Ipsum 1.0', 'Lorem 1'],
+        ]),
         Header(
           level: 1,
           text: 'Where does it come from?',
